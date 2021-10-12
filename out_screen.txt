@@ -1,0 +1,14 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_app/scareens/out/components/out_body.dart';
+
+class Outpage extends StatelessWidget {
+  static String routeName = "/outpage";
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.greenAccent,
+
+      body:Body(),
+    );
+  }
+}

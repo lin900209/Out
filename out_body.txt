@@ -1,0 +1,45 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_app/components/no_account_text.dart';
+import 'package:flutter_app/constants.dart';
+import 'package:flutter_app/scareens/forgot_password/components/forgot_password_form.dart';
+import 'package:flutter_app/scareens/login/login_screen.dart';
+import 'package:flutter_app/scareens/loginsuccess/login_success_screen.dart';
+import 'package:flutter_app/scareens/sign_up/sign_up_screen.dart';
+import 'package:flutter_app/size_cinfig.dart';
+import 'package:flutter_app/scareens/food/food_page_screen.dart';
+import 'package:flutter_app/scareens/food/components/food.page.dart';
+import 'package:flutter_app/scareens/food_East/food_East_screen.dart';
+import 'package:getwidget/getwidget.dart';
+class Body extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text("提示"),
+      content: Text("确定要登出嗎?"),
+      actions: <Widget>[
+        TextButton(
+          child: Text("取消"),
+          onPressed: (){
+            final snackBar = new SnackBar (content: new Text('正在登出，請稍等'));
+            Scaffold.of(context).showSnackBar(snackBar);
+            Navigator.pushNamed(context, LoginSuccess.routeName);
+          }
+        ),
+        TextButton(
+          child: Text("確定登出"),
+          onPressed: () {
+            final snackBar = new SnackBar (content: new Text('正在登出，請稍等'));
+            Scaffold.of(context).showSnackBar(snackBar);
+            Timer _timer = new Timer(const Duration(milliseconds: 2000), () {
+
+              Navigator.pushNamed(context, LoginScreen.routeName);
+          },
+    );
+    }
+        )
+      ],
+    );
+  }
+}
